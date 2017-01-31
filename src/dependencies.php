@@ -17,3 +17,15 @@ $container['logger'] = function ($c) {
     $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
     return $logger;
 };
+
+
+// Data
+class Data
+{
+    public $counter = 0;
+}
+
+$container['data'] = function ($c) {
+    $data = new Data();
+    return $data;
+};
